@@ -35,7 +35,8 @@ void buildTable(int * t, int d){
     int r,c;
     for(r=0;r<d;r++){
         for(c=0;c<d;c++){
-            *(t+r*d+c) = (r+1)*(c+1);
+            //t[r*d+c] = (r+1)*(c+1);
+            *(t + r*d + c) = (r+1)*(c+1);
         }
     }
 }
@@ -44,6 +45,7 @@ void printTable(int * t, int d){
     int r,c;
     for(r=0;r<d;r++){
         for(c=0;c<d;c++){
+            //printf("%d\t",t[r*d+c]);
             printf("%d\t",*(t+r*d+c));
         }
         printf("\n");
