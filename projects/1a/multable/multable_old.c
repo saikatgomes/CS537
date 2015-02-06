@@ -27,6 +27,25 @@ int main(int argc, char *argv[]) {
     buildTable(table,D);
     printTable(table,D);
 
+    /*
+    int r,c;
+
+    // create the entries
+    for(r=0; r< D; r++){
+        for (c=0; c<D; c++){
+            table[r*D+c] = (r+1)*(c+1);
+        }
+    }
+
+    // print the table
+    for (r=0;r<D;r++){
+        for (c=0; c<D; c++){
+            printf("%d\t",table[r*D+c]);
+        }
+        printf("\n");
+    }
+    */
+
     //free (table); 
     return(0);
 }
