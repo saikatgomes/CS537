@@ -49,7 +49,3 @@ void printTable(int * t, int d){
         printf("\n");
     }
 }
-
-
-
-
