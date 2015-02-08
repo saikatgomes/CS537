@@ -22,9 +22,29 @@ int main(int argc, char * argv[])
 		printf("Usage: tnine string1 [stringN]\n");
 		exit(1);
 	}
- 
-    CreateKeypad(); 
-    
+  
+    CreateKeypad();
+
+    /*
+    int q;
+    for(q=0;q<10;q++){
+        //int i = (q-1) % 10;
+        int i = q-1;
+        if(q==0){
+            i=9;
+        }
+        keypad[q]= malloc(sizeof(struct KeyboardElement));
+        keypad[q]->counter=0;
+        keypad[q]->letters = *(letters+i);
+        printf("keypad[%d] = letters[%d]\n",q,i);
+    }
+
+    q=0;
+    for(q=0;q<10;q++){
+        printf("%d - [%d] - %s\n",q,keypad[q]->counter,keypad[q]->letters);
+    }
+    */
+
     int n;
     int offSet;
     for (n=1;n<argc;n++){
@@ -59,6 +79,7 @@ int main(int argc, char * argv[])
                 break;
             }
             
+            //char alpha = *(*(letters+k1-1)+k2-1);
             char alpha = *(keypad[k1]->letters+k2-1);
             keypad[k1]->counter++;
             PrintWrapper(PrintFunction,*(*(letters+k1-1)+k2-1));
@@ -67,6 +88,7 @@ int main(int argc, char * argv[])
         PrintWrapper(PrintFunction,'\n');
     }
 	DisplayCounters();
+    // YOUR CODE HERE
 
 	return 0;
 }
@@ -76,8 +98,7 @@ void PrintFunction(char c)
 	printf("%c", c);
 }
 
-void CreateKeypad()
-{
+void CreateKeypad(){
     int q;
     for(q=0;q<10;q++){
         //int i = (q-1) % 10;
@@ -88,6 +109,7 @@ void CreateKeypad()
         keypad[q]= malloc(sizeof(struct KeyboardElement));
         keypad[q]->counter=0;
         keypad[q]->letters = *(letters+i);
+        //printf("keypad[%d] = letters[%d]\n",q,i);
     }
 }
 
