@@ -96,6 +96,7 @@ void DisplayCounters()
     int i;
     for (i=2;i<=9;i++){
         printf("%d\t%d\n",i,keypad[i]->counter);
+        free(keypad[i]);
     }
 }
 
