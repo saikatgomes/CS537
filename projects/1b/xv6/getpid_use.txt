@@ -1,0 +1,8 @@
+include/syscall.h:#define SYS_getpid 18
+kernel/sysfunc.h:int sys_getpid(void);
+kernel/sysproc.c:sys_getpid(void)
+kernel/syscall.c:[SYS_getpid]  sys_getpid,
+user/usys.S:SYSCALL(getpid)
+user/user.h:int getpid(void);
+user/usertests.c:  ppid = getpid();
+user/usertests.c:    ppid = getpid();
