@@ -443,4 +443,15 @@ procdump(void)
   }
 }
 
-
+int
+proccount(void)
+{
+    struct proc *p;
+    int count=0;
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+        if(p->state == UNUSED)
+            continue;
+        count=count+1;   
+    }
+    return count;
+}
